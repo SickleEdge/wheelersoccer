@@ -210,10 +210,3 @@
   transform: scale(1.02);
 }
 
-@layer utilities {
-  .from-gold {
-    --tw-gradient-from: #FFD700;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 215, 0, 0));
-  }
-}
-
