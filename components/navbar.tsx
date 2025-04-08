@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/wheelersoccer/logo.png"
+            src="/wheelersoccer/images/wheeler.png"
             alt="Wheeler Soccer Logo"
             width={40}
             height={40}
@@ -76,9 +76,18 @@ export default function Navbar() {
             </div>
             <SheetHeader className="relative z-10">
               <div className="flex items-center justify-between">
-                <SheetTitle className="text-white animate-slideDown text-2xl">
-                  <span className="gradient-text">Navigate</span>
-                </SheetTitle>
+                <div className="flex items-center space-x-3">
+                  <Image
+                    src="/wheelersoccer/images/wheeler.png"
+                    alt="Wheeler Logo"
+                    width={40}
+                    height={40}
+                    className="animate-float"
+                  />
+                  <SheetTitle className="text-white animate-slideDown text-2xl">
+                    <span className="gradient-text">Navigate</span>
+                  </SheetTitle>
+                </div>
                 <Button 
                   variant="ghost" 
                   size="icon" 

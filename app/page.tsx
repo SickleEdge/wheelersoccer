@@ -19,6 +19,17 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
+              <div className="flex items-center space-x-4 mb-2">
+                <Image
+                  src="/wheelersoccer/images/wheeler.png"
+                  alt="Wheeler Logo"
+                  width={60}
+                  height={60}
+                  className="animate-float"
+                />
+                <div className="h-10 w-1 bg-gold rounded-full"></div>
+                <h3 className="text-lg font-bold text-gold">WILDCATS</h3>
+              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight animate-slideInLeft">
                 Wheeler High School <span className="text-gold animate-pulse">Soccer</span>
               </h1>
