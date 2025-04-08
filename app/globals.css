@@ -111,10 +111,7 @@
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(45deg, #ffd700, #f59e0b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500;
 }
 
 /* Custom Card Styles */

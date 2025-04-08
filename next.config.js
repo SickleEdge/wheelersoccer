@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/wheelersoccer',
-  assetPrefix: '/wheelersoccer/',
-  trailingSlash: true,
 }
 
 module.exports = nextConfig 
