@@ -6,6 +6,7 @@ const nextConfig = {
   },
   basePath: '/wheelersoccer',
   assetPrefix: '/wheelersoccer/',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
