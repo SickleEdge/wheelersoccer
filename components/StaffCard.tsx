@@ -7,10 +7,14 @@ interface StaffCardProps {
 
 export function StaffCard({ staff }: StaffCardProps) {
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+    <Card className="overflow-hidden hover-scale">
       <CardContent className="p-4">
-        <h3 className="text-xl font-semibold text-navy mb-1">{staff.name}</h3>
-        <p className="text-muted-foreground">{staff.position}</p>
+        <div className="flex flex-col">
+          <h3 className="text-lg font-bold text-navy">{staff.name}</h3>
+          <div className="flex items-center mt-1">
+            <div className="bg-navy/10 px-2 py-0.5 rounded text-xs font-medium text-navy animate-pulse">{staff.position}</div>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );
