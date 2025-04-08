@@ -42,15 +42,30 @@ module.exports = {
           foreground: 'hsl(var(--card-foreground))',
         },
         // Custom colors
-        navy: '#0a1e42',
-        gold: '#ffd700',
+        navy: {
+          DEFAULT: '#0a1e42',
+          light: '#1a2e52',
+          dark: '#050e21',
+        },
+        gold: {
+          DEFAULT: '#ffd700',
+          light: '#ffe44d',
+          dark: '#ccac00',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+  ],
 } 
