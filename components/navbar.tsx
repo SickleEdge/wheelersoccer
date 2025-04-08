@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
+import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
+import Image from "next/image"
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -21,9 +23,9 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="container mx-auto px-4 py-4">
-      <div className="flex h-16 items-center justify-between">
-        <div className="flex items-center">
+    <header className="sticky top-0 z-50 w-full bg-navy shadow-md">
+      <div className="container flex h-16 items-center justify-between">
+        <div className="flex items-center gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-gold">
               <div className="absolute inset-0 bg-navy flex items-center justify-center text-gold font-bold text-xl">
@@ -32,58 +34,68 @@ export default function Navbar() {
             </div>
             <span className="hidden font-bold text-white md:inline-block">Wheeler Soccer</span>
           </Link>
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-4">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                pathname === item.href ? "text-gold" : "text-white/90 hover:text-gold"
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile Navigation Toggle */}
-        <div className="md:hidden">
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={() => setIsOpen(!isOpen)} 
-            className="text-white hover:bg-navy/50"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <div className="md:hidden py-4">
-          <div className="flex flex-col space-y-2">
+          <nav className="hidden md:flex gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setIsOpen(false)}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-md transition-colors",
-                  pathname === item.href ? "text-gold" : "text-white/90 hover:text-gold"
+                  "text-sm font-medium text-white hover:text-gold transition-colors",
+                  pathname === item.href ? "text-gold" : ""
                 )}
               >
                 {item.label}
               </Link>
             ))}
-          </div>
+          </nav>
         </div>
-      )}
-    </nav>
+        <div className="flex items-center gap-4">
+          <Link href="/contact">
+            <Button
+              variant="outline"
+              size="sm"
+              className="hidden md:flex border-gold text-gold hover:bg-gold hover:text-navy"
+            >
+              Contact Us
+            </Button>
+          </Link>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                className="md:hidden border-gold text-gold hover:bg-gold hover:text-navy"
+              >
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-navy border-gold">
+              <nav className="flex flex-col gap-4 mt-8">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-lg font-medium text-white hover:text-gold transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Link href="/contact" className="mt-4">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-gold text-gold hover:bg-gold hover:text-navy"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
   )
 }
 

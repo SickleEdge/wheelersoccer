@@ -36,11 +36,13 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-xl hover-glow">
-              <img
-                src="/wheelersoccer.jpg"
-                alt="Wheeler Soccer Team"
-                className="object-cover w-full h-full"
+            <div className="relative w-full h-[500px] overflow-hidden rounded-xl shadow-xl">
+              <Image 
+                src="/wheelersoccer.jpg" 
+                alt="Wheeler High School Soccer Team"
+                fill
+                className="object-cover"
+                priority
               />
             </div>
           </div>

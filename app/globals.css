@@ -77,7 +77,7 @@
 
 /* Background Patterns */
 .hero-pattern {
-  background-image: url('/images/halftone-pattern.png');
+  background-image: url('/wheelersoccer/images/halftone-pattern.png');
   background-size: 200px;
   opacity: 0.1;
 }
