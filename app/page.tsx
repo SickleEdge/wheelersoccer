@@ -8,6 +8,9 @@ import { PlayerCard } from '@/components/PlayerCard';
 import { StaffCard } from '@/components/StaffCard';
 
 export default function Home() {
+  // Calculate total team members
+  const totalPlayers = varsityRoster.players.length + jvRoster.players.length;
+  
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -75,7 +78,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground">Team Members</p>
-                    <h3 className="text-2xl font-bold gradient-text">24</h3>
+                    <h3 className="text-2xl font-bold gradient-text">48</h3>
                   </div>
                 </div>
               </CardContent>
@@ -103,7 +106,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground">State Rank</p>
-                    <h3 className="text-2xl font-bold gradient-text">#3</h3>
+                    <h3 className="text-2xl font-bold gradient-text">#283</h3>
                   </div>
                 </div>
               </CardContent>
