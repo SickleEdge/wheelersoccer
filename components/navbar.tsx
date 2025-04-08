@@ -24,17 +24,20 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-navy shadow-md">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-6 md:gap-10">
+      <div className="container mx-auto px-4 flex h-16 items-center justify-between">
+        <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-gold">
               <div className="absolute inset-0 bg-navy flex items-center justify-center text-gold font-bold text-xl">
                 W
               </div>
             </div>
-            <span className="hidden font-bold text-white md:inline-block">Wheeler Soccer</span>
+            <span className="font-bold text-white">Wheeler Soccer</span>
           </Link>
-          <nav className="hidden md:flex gap-6">
+        </div>
+        
+        <div className="hidden md:flex items-center space-x-8">
+          <nav className="flex items-center space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -48,23 +51,24 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-        </div>
-        <div className="flex items-center gap-4">
           <Link href="/contact">
             <Button
               variant="outline"
               size="sm"
-              className="hidden md:flex border-gold text-gold hover:bg-gold hover:text-navy"
+              className="border-gold text-gold hover:bg-gold hover:text-navy"
             >
               Contact Us
             </Button>
           </Link>
+        </div>
+
+        <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button
                 variant="outline"
                 size="icon"
-                className="md:hidden border-gold text-gold hover:bg-gold hover:text-navy"
+                className="border-gold text-gold hover:bg-gold hover:text-navy"
               >
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle menu</span>

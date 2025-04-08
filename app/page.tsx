@@ -38,7 +38,7 @@ export default function Home() {
             </div>
             <div className="relative w-full h-[500px] overflow-hidden rounded-xl shadow-xl">
               <Image 
-                src="/wheelersoccer.jpg" 
+                src="/wheelersoccer/wheelersoccer.jpg" 
                 alt="Wheeler High School Soccer Team"
                 fill
                 className="object-cover"
