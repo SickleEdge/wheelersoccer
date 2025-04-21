@@ -80,16 +80,18 @@ export default function LinksPage() {
         <div className="space-y-6">
           <Card className="p-6 bg-black shadow-lg border border-red-500/20">
             <div className="flex items-center justify-between mb-4">
-              <Image 
-                src="drops.png" 
-                alt="Photographer Drops" 
-                width={400}
-                height={96}
-                priority
-                className="h-24 w-auto object-contain"
-              />
+              <div className="flex-1">
+                <Image 
+                  src="drops.png" 
+                  alt="Photographer Drops" 
+                  width={300}
+                  height={72}
+                  priority
+                  className="h-[72px] w-auto object-contain"
+                />
+              </div>
               <Link href="/drops">
-                <Button className="bg-red-500 text-white hover:bg-red-600 transition-colors duration-200">
+                <Button className="bg-red-500 text-white hover:bg-red-600 transition-colors duration-200 whitespace-nowrap">
                   View all DROPS
                 </Button>
               </Link>
