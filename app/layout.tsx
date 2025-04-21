@@ -10,7 +10,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Wheeler Soccer',
   description: 'Wheeler High School Soccer Team',
-  manifest: '/manifest.json'
+  icons: {
+    icon: '/favicon.ico',
+  }
 };
 
 export default function RootLayout({
